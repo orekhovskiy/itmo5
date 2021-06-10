@@ -1,0 +1,39 @@
+ec	variable	6
+truck 	storage	2
+forklift	storage	1
+
+	generate	1
+	gate snf truck,busy_drop	
+
+	queue	1,(Exponential(1,0,5))
+	test GE	Q1,200,drop
+	depart	1,Q1
+	queue	2,1
+	test E	Q2,v$ec,drop
+	enter	truck
+	depart	2,Q2
+	advance	10
+	priority	1
+	queue	7,v$ec
+unload	enter	forklift
+	depart	7
+	advance	5
+	leave	forklift
+	test E	Q7,0,unload
+	split	1,fridge
+	advance	10
+	leave	truck
+	transfer	1,drop
+
+fridge	priority	0
+	queue	8,v$ec	
+shtab	enter	forklift
+	depart	8
+	advance	20
+	leave	forklift
+	test E	Q8,0,shtab
+
+	terminate	1
+drop	terminate	0
+busy_drop	terminate	0
+	start	100

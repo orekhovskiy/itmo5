@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "solution": {
+      "commandName": "Project",
+      "commandLineArgs": "input.xml"
+    }
+  }
+}

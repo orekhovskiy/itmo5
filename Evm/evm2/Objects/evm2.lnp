@@ -1,0 +1,4 @@
+".\Objects\main.obj",
+".\Objects\START_AD.obj" 
+TO ".\Objects\evm2" 
+PRINT(".\Listings\evm2.m51") RAMSIZE(256) 

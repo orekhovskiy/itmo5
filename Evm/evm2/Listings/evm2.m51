@@ -1,0 +1,140 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/17/2019  18:10:07  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\START_AD.obj TO .\Objects\evm2 PRINT (.\Listings\evm2.m51) RAM
+>> SIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\START_AD.obj (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\evm2 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         ?DT?MAIN
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0012H     UNIT         ?XD?MAIN
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00D1H     UNIT         ?PR?MAIN?MAIN
+            CODE    08D1H     0012H     UNIT         ?CO?MAIN
+            CODE    08E3H     000FH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\evm2 (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?CO?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\evm2 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0800H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/17/2019  18:10:07  PAGE 2
+
+
+  C:08D1H         PUBLIC        input
+  X:0000H         PUBLIC        output
+  D:0008H         PUBLIC        temp
+  D:0009H         PUBLIC        i
+  D:000AH         PUBLIC        j
+  -------         PROC          MAIN
+  C:0800H         LINE#         10
+  C:0800H         LINE#         11
+  C:0800H         LINE#         12
+  C:0815H         LINE#         13
+  C:0815H         LINE#         14
+  C:0833H         LINE#         15
+  C:0837H         LINE#         16
+  C:084FH         LINE#         17
+  C:084FH         LINE#         18
+  C:0866H         LINE#         19
+  C:0866H         LINE#         20
+  C:0897H         LINE#         21
+  C:0897H         LINE#         22
+  C:08ABH         LINE#         23
+  C:08B7H         LINE#         24
+  C:08C4H         LINE#         25
+  C:08C4H         LINE#         26
+  C:08C8H         LINE#         27
+  C:08CDH         LINE#         28
+  C:08D0H         LINE#         29
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C_STARTUP
+  C:08E3H         SEGMENT       ?C_C51STARTUP
+  I:000BH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00AFH         SYMBOL        CFG8XX
+  N:0000H         SYMBOL        EXSP
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08E6H         SYMBOL        IDATALOOP
+  D:00A0H         SYMBOL        P2
+  N:0000H         SYMBOL        PBPSTACK
+  N:0000H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0001H         SYMBOL        PPAGEENABLE
+  D:0081H         SYMBOL        SP
+  D:00B7H         SYMBOL        SPH
+  N:0200H         SYMBOL        STACKSIZE
+  C:08E3H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  N:0000H         SYMBOL        XRAMEN
+  N:0600H         SYMBOL        XSTACKSTART
+  N:0000H         SYMBOL        _CFG8XX
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/17/2019  18:10:07  PAGE 3
+
+
+  C:0000H         LINE#         167
+  C:08E3H         LINE#         180
+  C:08E5H         LINE#         181
+  C:08E6H         LINE#         182
+  C:08E7H         LINE#         183
+  C:08E9H         LINE#         202
+  C:08ECH         LINE#         236
+  C:08EFH         LINE#         248
+  -------         ENDMOD        ?C_STARTUP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00F5H BYTE (11%) *
+******************************************************************************
+
+Program Size: data=12.0 xdata=18 code=245
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,29 @@
+TU5       TABLE	M1,100,100,20
+pribor1	STORAGE	1
+		GENERATE	(Exponential(5,0,15.87))
+SMO1	QUEUE	11
+		QUEUE	12
+		ENTER	pribor1
+		DEPART	11
+		ADVANCE	(Exponential(5,0,100))
+		LEAVE	pribor1
+		DEPART	12
+		TRANSFER	0.33,,SMO3 
+SMO2	TEST L	Q2,3,drop1
+		QUEUE	2
+		SEIZE	pribor2
+		DEPART	2
+		ADVANCE	10
+		RELEASE	pribor2
+		TRANSFER	,quit
+SMO3	TEST L	Q3,6,drop2
+		QUEUE	3
+		SEIZE	pribor3
+		DEPART	3
+		ADVANCE	(Uniform(1, 100 - 30#sqr(3), 100 + 30#sqr(3)))
+		RELEASE	pribor3
+quit	TABULATE 	TU5
+		TERMINATE	1
+drop1	TERMINATE	1       
+drop2	TERMINATE	1
+start 100000
